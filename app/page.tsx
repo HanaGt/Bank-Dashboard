@@ -1,9 +1,11 @@
-import Header from "../components/header";
+// import Header from "../components/header";
+// import Sidebar from "../components/sidebar";
 
 const page = () => {
   return (
     <div>
-      <Header /> 
+      {/* <Sidebar />
+      <Header />  */}
     </div>
   )
 }
