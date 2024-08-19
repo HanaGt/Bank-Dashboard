@@ -1,52 +1,51 @@
 import React from 'react';
-import { FiHome, FiCreditCard, FiDollarSign, FiUser, FiSettings, FiBriefcase, FiPieChart, FiLogOut } from 'react-icons/fi';
+import { MdHome , MdMiscellaneousServices , MdSettings , MdBarChart} from "react-icons/md";
+import { FaMoneyBillTransfer , FaUser , FaCreditCard , FaHandHoldingDollar , FaLightbulb} from "react-icons/fa6";
 
 const Sidebar: React.FC = () => {
   return (
     <div className="w-64 h-screen bg-white shadow-md flex flex-col">
-      {/* Logo */}
       <div className="p-6">
-        <h1 className="text-2xl font-bold text-blue-600">BankDash.</h1>
+        <h1 className="text-2xl font-extrabold text-blue-900">BankDash.</h1>
       </div>
-
-      {/* Navigation Links */}
       <nav className="mt-6">
         <ul className="space-y-4">
-          <li className="flex items-center space-x-4 px-6 py-2 hover:bg-gray-100 cursor-pointer">
-            <FiHome className="text-gray-600 w-5 h-5" />
-            <span className="text-gray-700">Dashboard</span>
+         <li className="flex items-center text-gray-500 space-x-4 px-6 py-2 cursor-pointer hover:text-blue-600">
+            <MdHome className="text-inherit w-6 h-6" />
+              <span className="text-inherit font-semibold">Dashboard</span> 
+        </li>
+
+        <li className="flex items-center  text-gray-500 space-x-4 px-6 py-2 cursor-pointer hover:text-blue-600">
+            <FaMoneyBillTransfer className="text-inherit w-6 h-6" />
+              <span className="text-inherit font-semibold">Transactions</span> 
+        </li>
+          <li className="flex items-center text-gray-500 space-x-4 px-6 py-2 hover:text-blue-600 cursor-pointer">
+            <FaUser className="text-inherit w-6 h-6" />
+            <span className="text-inherit font-semibold">Accounts</span>
           </li>
-          <li className="flex items-center space-x-4 px-6 py-2 hover:bg-gray-100 cursor-pointer">
-            <FiDollarSign className="text-gray-600 w-5 h-5" />
-            <span className="text-gray-700">Transactions</span>
+          <li className="flex items-center  text-gray-500 space-x-4 px-6 py-2 hover:text-blue-600 cursor-pointer">
+            <MdBarChart className="text-inherit w-6 h-6" />
+            <span className="text-inherit font-semibold">Investments</span>
           </li>
-          <li className="flex items-center space-x-4 px-6 py-2 hover:bg-gray-100 cursor-pointer">
-            <FiUser className="text-gray-600 w-5 h-5" />
-            <span className="text-gray-700">Accounts</span>
+          <li className="flex items-center  text-gray-500 space-x-4 px-6 py-2 hover:text-blue-600 cursor-pointer">
+            <FaCreditCard className="text-inherit w-6 h-6" />
+            <span className="text-inherit font-semibold">Credit Cards</span>
           </li>
-          <li className="flex items-center space-x-4 px-6 py-2 hover:bg-gray-100 cursor-pointer">
-            <FiBriefcase className="text-gray-600 w-5 h-5" />
-            <span className="text-gray-700">Investments</span>
+          <li className="flex items-center  text-gray-500 space-x-4 px-6 py-2 hover:text-blue-600 cursor-pointer">
+            <FaHandHoldingDollar className="text-inherit w-6 h-6" />
+            <span className="text-inherit font-semibold">Loans</span>
           </li>
-          <li className="flex items-center space-x-4 px-6 py-2 hover:bg-gray-100 cursor-pointer">
-            <FiCreditCard className="text-gray-600 w-5 h-5" />
-            <span className="text-gray-700">Credit Cards</span>
+          <li className="flex items-center  text-gray-500 space-x-4 px-6 py-2 hover:text-blue-600 cursor-pointer">
+            <MdMiscellaneousServices className="text-inherit w-6 h-6" />
+            <span className="text-inherit font-semibold">Services</span>
           </li>
-          <li className="flex items-center space-x-4 px-6 py-2 hover:bg-gray-100 cursor-pointer">
-            <FiPieChart className="text-gray-600 w-5 h-5" />
-            <span className="text-gray-700">Loans</span>
+          <li className="flex items-center  text-gray-500 space-x-4 px-6 py-2 hover:text-blue-600 cursor-pointer">
+            <FaLightbulb className="text-inherit w-6 h-6" />
+            <span className="text-inherit font-semibold">My Privileges</span>
           </li>
-          <li className="flex items-center space-x-4 px-6 py-2 hover:bg-gray-100 cursor-pointer">
-            <FiSettings className="text-gray-600 w-5 h-5" />
-            <span className="text-gray-700">Services</span>
-          </li>
-          <li className="flex items-center space-x-4 px-6 py-2 hover:bg-gray-100 cursor-pointer">
-            <FiSettings className="text-gray-600 w-5 h-5" />
-            <span className="text-gray-700">My Privileges</span>
-          </li>
-          <li className="flex items-center space-x-4 px-6 py-2 hover:bg-gray-100 cursor-pointer">
-            <FiSettings className="text-gray-600 w-5 h-5" />
-            <span className="text-gray-700">Setting</span>
+          <li className="flex items-center  text-gray-500 space-x-4 px-6 py-2 hover:text-blue-600 cursor-pointer">
+            <MdSettings className="text-inherit w-6 h-6" />
+            <span className="text-inherit font-semibold">Setting</span>
           </li>
         </ul>
       </nav>
@@ -55,7 +54,7 @@ const Sidebar: React.FC = () => {
       {/* Logout */}
       {/* <div className="mt-auto p-6">
         <div className="flex items-center space-x-4 cursor-pointer hover:bg-gray-100 py-2 px-6">
-          <FiLogOut className="text-gray-600 w-5 h-5" />
+          <FiLogOut className="text-inherit w-6 h-6" />
           <span className="text-gray-700">Log Out</span>
         </div>
       </div> */}

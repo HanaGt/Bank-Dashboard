@@ -5,7 +5,7 @@ import Image from 'next/image';
 const Header: React.FC = () => {
   return (
     <header className="flex justify-between items-center py-4 px-6 bg-white shadow-md">
-      <h2 className="text-2xl text-blue-900 font-bold">Overview</h2>
+      <h2 className="text-2xl text-blue-900 font-semibold">Overview</h2>
 
       <div className="flex items-center space-x-6">
         <div className="relative">
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
           <Image
             width={60}
             height={60}
-            src=""
+            src="https://via.placeholder.com/150"
             alt="Profile"
             className="w-full h-full rounded-full object-cover"
           />
