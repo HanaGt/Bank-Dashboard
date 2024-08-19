@@ -5,20 +5,20 @@ import Image from 'next/image';
 const Header: React.FC = () => {
   return (
     <header className="flex justify-between items-center py-4 px-6 bg-white shadow-md">
-      <h2 className="text-2xl font-bold">Overview</h2>
+      <h2 className="text-2xl text-blue-900 font-bold">Overview</h2>
 
       <div className="flex items-center space-x-6">
         <div className="relative">
           <input
             type="text"
             placeholder="Search for something"
-            className="w-72 py-2 pl-10 pr-4 bg-gray-100 rounded-lg focus:outline-none"
+            className="w-64 text-searchColor py-2 pl-10 pr-4 bg-gray-100 rounded-3xl focus:outline-none"
           />
-          <span className="absolute left-3 top-2.5 text-gray-500">
+          <span className="absolute left-3 top-2.5 text-gray-500 ">
             <FiSearch />
           </span>
         </div>
-        <FiSettings className="text-gray-600 w-6 h-6 cursor-pointer" />
+        <FiSettings className="text-gray-600 bg-customGray w-6 h-6 cursor-pointer" />
 
         <div className="relative">
           <FiBell className="text-gray-600 w-6 h-6 cursor-pointer" />
@@ -28,8 +28,8 @@ const Header: React.FC = () => {
         </div>
         <div className="w-10 h-10">
           <Image
-            width={40}
-            height={40}
+            width={60}
+            height={60}
             src=""
             alt="Profile"
             className="w-full h-full rounded-full object-cover"
