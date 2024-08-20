@@ -19,15 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} flex h-screen`}>
-        {/* Sidebar - Takes up 1/4th of the width */}
         <Sidebar />
-
-        {/* Main Content Area */}
         <div className="flex flex-col w-full">
-          {/* Header */}
           <Header />
-
-          {/* Main Body */}
           <main className="p-6 bg-gray-100 min-h-full">
             {children}
           </main>
