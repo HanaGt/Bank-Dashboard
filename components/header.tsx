@@ -1,11 +1,26 @@
-import { FiSearch, FiSettings, FiBell } from 'react-icons/fi';
+'use client';
+
+import { FiSearch, FiSettings, FiBell, FiMenu } from 'react-icons/fi';
 import Image from 'next/image';
+import { useState } from 'react';
+import Sidebar from './sidebar';
 
 const Header: React.FC = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   return (
-    <header className="flex flex-col md:flex-row justify-between items-center py-4 px-6 bg-white shadow-md">
+    <header className="flex flex-col md:flex-row justify-between items-center py-4 px-6 bg-white shadow-md relative">
       <div className="flex justify-between items-center w-full md:w-auto">
-        <h2 className="text-2xl text-blue-900 font-semibold">Overview</h2>
+        <div className="flex items-center space-x-4">
+          <button onClick={toggleSidebar} className="md:hidden">
+            <FiMenu className="text-blue-900 w-6 h-6" />
+          </button>
+          <h2 className="text-2xl text-blue-900 font-semibold">Overview</h2>
+        </div>
         <div className="w-12 h-12 md:hidden">
           <Image
             width={60}
@@ -17,7 +32,7 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 mt-4 md:mt-0 w-full md:w-auto">
+      <div className="flex flex-col items-center mt-4 w-full md:w-auto md:mt-0">
         <div className="relative w-full md:w-auto">
           <input
             type="text"
@@ -28,6 +43,9 @@ const Header: React.FC = () => {
             <FiSearch />
           </span>
         </div>
+      </div>
+
+      <div className="flex items-center space-x-6 mt-4 md:mt-0">
         <div className="hidden md:flex bg-gray-200 w-12 h-12 rounded-full items-center justify-center cursor-pointer">
           <FiSettings className="text-blue-200 w-6 h-6" />
         </div>
@@ -47,6 +65,20 @@ const Header: React.FC = () => {
           />
         </div>
       </div>
+
+      {sidebarOpen && (
+        <div className="fixed inset-0 z-50 bg-gray-900 bg-opacity-50 md:hidden" onClick={toggleSidebar}>
+          <div className="fixed inset-y-0 left-0 w-64 bg-white p-4 shadow-lg" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={toggleSidebar}
+              className="absolute top-4 right-4 text-gray-600"
+            >
+              <FiMenu className="w-6 h-6" />
+            </button>
+            <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+          </div>
+        </div>
+      )}
     </header>
   );
 };
