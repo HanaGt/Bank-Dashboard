@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { MdHome, MdMiscellaneousServices, MdSettings, MdBarChart, MdClose } from "react-icons/md";
 import { FaMoneyBillTransfer, FaUser, FaCreditCard, FaHandHoldingDollar, FaLightbulb } from "react-icons/fa6";
 
@@ -48,40 +49,58 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       </div>
       <ul className="space-y-2 p-4">
         <li className="flex items-center text-gray-500 space-x-4 px-6 py-2 hover:text-blue-600 cursor-pointer">
-          <MdHome className="text-inherit w-6 h-6" />
-          <span className="text-inherit font-semibold">Home</span>
+          <Link href="/" className="flex items-center space-x-4">
+            <MdHome className="text-inherit w-6 h-6" />
+            <span className="text-inherit font-semibold">Dashboard</span>
+          </Link>
         </li>
         <li className="flex items-center text-gray-500 space-x-4 px-6 py-2 hover:text-blue-600 cursor-pointer">
-          <FaMoneyBillTransfer className="text-inherit w-6 h-6" />
-          <span className="text-inherit font-semibold">Transactions</span>
+          <Link href="/transactions" className="flex items-center space-x-4">
+            <FaMoneyBillTransfer className="text-inherit w-6 h-6" />
+            <span className="text-inherit font-semibold">Transactions</span>
+          </Link>
         </li>
         <li className="flex items-center text-gray-500 space-x-4 px-6 py-2 hover:text-blue-600 cursor-pointer">
-          <FaUser className="text-inherit w-6 h-6" />
-          <span className="text-inherit font-semibold">Accounts</span>
+          <Link href="/accounts" className="flex items-center space-x-4">
+            <FaUser className="text-inherit w-6 h-6" />
+            <span className="text-inherit font-semibold">Accounts</span>
+          </Link>
         </li>
         <li className="flex items-center text-gray-500 space-x-4 px-6 py-2 hover:text-blue-600 cursor-pointer">
-          <MdBarChart className="text-inherit w-6 h-6" />
-          <span className="text-inherit font-semibold">Investments</span>
+          <Link href="/investments" className="flex items-center space-x-4">
+            <MdBarChart className="text-inherit w-6 h-6" />
+            <span className="text-inherit font-semibold">Investments</span>
+          </Link>
         </li>
         <li className="flex items-center text-gray-500 space-x-4 px-6 py-2 hover:text-blue-600 cursor-pointer">
-          <FaCreditCard className="text-inherit w-6 h-6" />
-          <span className="text-inherit font-semibold">Credit Cards</span>
+          <Link href="/credit-cards" className="flex items-center space-x-4">
+            <FaCreditCard className="text-inherit w-6 h-6" />
+            <span className="text-inherit font-semibold">Credit Cards</span>
+          </Link>
         </li>
         <li className="flex items-center text-gray-500 space-x-4 px-6 py-2 hover:text-blue-600 cursor-pointer">
-          <FaHandHoldingDollar className="text-inherit w-6 h-6" />
-          <span className="text-inherit font-semibold">Loans</span>
+          <Link href="/loans" className="flex items-center space-x-4">
+            <FaHandHoldingDollar className="text-inherit w-6 h-6" />
+            <span className="text-inherit font-semibold">Loans</span>
+          </Link>
         </li>
         <li className="flex items-center text-gray-500 space-x-4 px-6 py-2 hover:text-blue-600 cursor-pointer">
-          <MdMiscellaneousServices className="text-inherit w-6 h-6" />
-          <span className="text-inherit font-semibold">Services</span>
+          <Link href="/services" className="flex items-center space-x-4">
+            <MdMiscellaneousServices className="text-inherit w-6 h-6" />
+            <span className="text-inherit font-semibold">Services</span>
+          </Link>
         </li>
         <li className="flex items-center text-gray-500 space-x-4 px-6 py-2 hover:text-blue-600 cursor-pointer">
-          <FaLightbulb className="text-inherit w-6 h-6" />
-          <span className="text-inherit font-semibold">My Privileges</span>
+          <Link href="/privileges" className="flex items-center space-x-4">
+            <FaLightbulb className="text-inherit w-6 h-6" />
+            <span className="text-inherit font-semibold">My Privileges</span>
+          </Link>
         </li>
         <li className="flex items-center text-gray-500 space-x-4 px-6 py-2 hover:text-blue-600 cursor-pointer">
-          <MdSettings className="text-inherit w-6 h-6" />
-          <span className="text-inherit font-semibold">Setting</span>
+          <Link href="/settings" className="flex items-center space-x-4">
+            <MdSettings className="text-inherit w-6 h-6" />
+            <span className="text-inherit font-semibold">Setting</span>
+          </Link>
         </li>
       </ul>
     </div>
