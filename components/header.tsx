@@ -4,6 +4,8 @@ import { FiSearch, FiSettings, FiBell, FiMenu } from 'react-icons/fi';
 import Image from 'next/image';
 import { useState } from 'react';
 import Sidebar from './sidebar';
+import livia from '../public/images/Livia.jpg'
+
 
 const Header: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -59,7 +61,7 @@ const Header: React.FC = () => {
           <Image
             width={60}
             height={60}
-            src="https://via.placeholder.com/150"
+            src={livia}
             alt="Profile"
             className="w-full h-full rounded-full object-cover"
           />

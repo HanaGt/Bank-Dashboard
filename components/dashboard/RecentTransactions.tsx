@@ -1,5 +1,5 @@
 import React from 'react';
-import { RecentTransactionProps }from '../../types'
+import { RecentTransactionProps }from '../../../types'
 import Image from 'next/image'
 
 const RecentTransaction: React.FC<RecentTransactionProps> = ({ title, date, amount, type, imageSrc }) => (

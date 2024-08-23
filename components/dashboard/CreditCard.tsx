@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { CardProps } from '../../types';
+import { CardProps } from '../../../types';
 
 const CreditCard: React.FC<CardProps> = ({
   balance,

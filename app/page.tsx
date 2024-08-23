@@ -1,14 +1,14 @@
-import CreditCard from "@/components/CreditCard";
-import RecentTransaction from "@/components/RecentTransactions";
+import CreditCard from "@/components/dashboard/CreditCard";
+import RecentTransaction from "@/components/dashboard/RecentTransactions";
 import LightChip from "@/public/Chip_Card _Light.svg";
 import DarkChip from "@/public/Chip_Card.svg";
-import WeeklyActivityChart from "@/components/charts/WeeklyActivityChart";
-import ExpenseStatisticsChart from "@/components/charts/ExpenseStatisticsChart";
+import WeeklyActivityChart from "@/components/dashboard/charts/WeeklyActivityChart";
+import ExpenseStatisticsChart from "@/components/dashboard/charts/ExpenseStatisticsChart";
 import firstIcon from "@/public/Group 313.svg";
 import secondIcon from "@/public/Group 314.svg";
 import thirdIcon from "@/public/Group 315.svg";
-import QuickTransfer from "@/components/charts/quickTransfer";
-import LineGraph from "@/components/charts/LineGraph";
+import QuickTransfer from "@/components/dashboard/charts/quickTransfer";
+import LineGraph from "@/components/dashboard/charts/LineGraph";
 
 const Dashboard = () => {
   return (

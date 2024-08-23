@@ -1,6 +1,6 @@
 'use client'
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
-import { LabelProps} from '../../../types'
+import { LabelProps} from '../../../../types'
 const data = [
   { name: 'Transfer', value: 30, color: '#333b76' },
   { name: 'Service', value: 15, color: '#FF7F00' },

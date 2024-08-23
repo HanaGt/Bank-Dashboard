@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { PersonProps } from "../../../types";
+import { PersonProps } from "../../../../types";
 
 const TransferMembers: React.FC<PersonProps> = ({ person, selectedPerson }) => {
   return (
