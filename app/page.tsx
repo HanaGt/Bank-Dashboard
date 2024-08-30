@@ -1,12 +1,14 @@
 import CreditCard from "@/components/CreditCard";
 import RecentTransaction from "@/components/RecentTransactions";
-import LightChip from '@/public/Chip_Card _Light.svg'
-import DarkChip from '@/public/Chip_Card.svg';
+import LightChip from "@/public/Chip_Card _Light.svg";
+import DarkChip from "@/public/Chip_Card.svg";
 import WeeklyActivityChart from "@/components/charts/WeeklyActivityChart";
 import ExpenseStatisticsChart from "@/components/charts/ExpenseStatisticsChart";
-import firstIcon from "@/public/Group 313.svg"
-import secondIcon from "@/public/Group 314.svg"
-import thirdIcon from "@/public/Group 315.svg"
+import firstIcon from "@/public/Group 313.svg";
+import secondIcon from "@/public/Group 314.svg";
+import thirdIcon from "@/public/Group 315.svg";
+import QuickTransfer from "@/components/charts/quickTransfer";
+import LineGraph from "@/components/charts/LineGraph";
 
 const Dashboard = () => {
   return (
@@ -15,7 +17,9 @@ const Dashboard = () => {
         <div className="flex-1">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-semibold text-[#343C6A]">My Cards</h2>
-              <a href="#" className="text-[#343C6A]">See All</a>
+            <a href="#" className="text-[#343C6A]">
+              See All
+            </a>
           </div>
           <div className="flex flex-row justify-start space-x-4 overflow-x-auto">
             <div className="flex space-x-4">
@@ -24,8 +28,8 @@ const Dashboard = () => {
                 cardHolder="Eddy Cusuma"
                 validThru="12/22"
                 cardNumber="3778 **** **** 1234"
-                gradientFrom='#4C49ED'
-                gradientTo='#0A06F4'
+                gradientFrom="#4C49ED"
+                gradientTo="#0A06F4"
                 chipImage={LightChip}
                 textColor="text-white"
                 bottomBackground="bg-gradient-to-br from-[rgba(76,73,237,0.8)] to-[rgba(76,73,237,1)]"
@@ -44,8 +48,10 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className="flex-1">
-          <h2 className="text-lg font-semibold mb-4 text-[#343C6A]">Recent Transactions</h2>
+        <div>
+          <h2 className="text-lg font-semibold mb-4 text-[#343C6A]">
+            Recent Transactions
+          </h2>
           <div className="bg-white p-4 rounded-3xl shadow">
             <div className="space-y-4">
               <RecentTransaction
@@ -74,33 +80,59 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="mt-8 grid grid-cols-1 lg:grid-cols-4 gap-6 h-72">
-          <div className="col-span-3">
-            <h2 className="text-lg font-semibold mb-4 text-[#343C6A]">Weekly Activity</h2>
-            <div className=" h-70">
-              <WeeklyActivityChart />
-            </div>
+      <div className="mt-10 grid grid-cols-1 lg:grid-cols-4 gap-6 h-72">
+        <div className="col-span-3">
+          <h2 className="text-lg font-semibold mb-4 text-[#343C6A]">
+            Weekly Activity
+          </h2>
+          <div className="h-70">
+            <WeeklyActivityChart />
           </div>
+        </div>
 
-          <div className="col-span-1">
-            <h2 className="text-lg font-semibold mb-4 text-[#343C6A]">Expense Statistics</h2>
-            <div className="relative bg-white p-6 rounded-2xl shadow h-72">
-              <ExpenseStatisticsChart />
-            </div>
+        <div className="col-span-1">
+          <h2 className="text-lg font-semibold mb-4 text-[#343C6A]">
+            Expense Statistics
+          </h2>
+          <div className="relative bg-white p-6 rounded-2xl shadow h-72">
+            <ExpenseStatisticsChart />
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 px-4 h-[300px]">
-        <div className=" col-span-5 my-auto space-y-4 py-6 flex flex-col items-start">
-          <p className='font-bold text-[#343C6A]'>Quick transfer</p>
-          {/* transfer component */}
+      </div>
+      <div></div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 mt-8">
+        <div className="flex flex-col space-y-4 py-8 pb-10 min-h-full">
+          <p className="font-bold text-[#343C6A]">Quick Transfer</p>
+          <QuickTransfer />
         </div>
-        <div className="flex flex-col items-start justify-center col-span-7 space-y-4  py-6 ">
-          <p className='font-bold text-xl text-[#343C6A]'>Balance History</p>
-          {/* balance history */}
+        <div className="flex flex-col py-6 min-h-full mt-8 lg:mt-0">
+          <div className="space-y-2">
+            <p className="font-bold text-xl text-[#343C6A] ml-4">
+              Balance History
+            </p>
+            <LineGraph
+              data={{
+                labels: [
+                  "Jul",
+                  "Aug",
+                  "Sep",
+                  "Oct",
+                  "Nov",
+                  "Dec",
+                  "Jan",
+                  "Feb",
+                  "Mar",
+                  "Apr",
+                  "May",
+                  "Jun",
+                ],
+                values: [65, 59, 80, 81, 56, 55, 40, 81, 56, 55, 40, 60],
+              }}
+            />
+          </div>
         </div>
       </div>
-      </div>
-       
+    </div>
   );
 };
 

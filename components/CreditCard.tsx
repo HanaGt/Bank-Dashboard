@@ -12,7 +12,7 @@ const CreditCard: React.FC<CardProps> = ({
   chipImage,
   borderStyle = '',
   bottomBackground,
-  textColor = 'text-white'  // Default to white text color
+  textColor = 'text-white'  
 }) => {
   const inlineGradientStyle = {
     backgroundImage: `linear-gradient(to right, ${gradientFrom}, ${gradientTo})`,
